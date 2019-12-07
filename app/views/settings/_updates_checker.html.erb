@@ -1,0 +1,22 @@
+<p>
+  <label>Excluded plugins</label>
+  <%= select_tag 'settings[excluded_plugins]', options_from_collection_for_select(Redmine::Plugin.all, :id, :name, @settings['excluded_plugins']), :multiple => true %>
+</p>
+<p>
+  <label>Notify updatable plugins</label>
+  <%= check_box_tag 'settings[notify_updatable]', '1', @settings['notify_updatable'] %>
+</p>
+<p>
+  <label>Notify updated plugins</label>
+  <%= check_box_tag 'settings[notify_updated]', '1', @settings['notify_updated'] %>
+</p>
+<p>
+  <label>Notify unknown plugins</label>
+  <%= check_box_tag 'settings[notify_unknown]', '1', @settings['notify_unknown'] %>
+</p>
+<p>
+  <label>Email recipients</label>
+  <%= text_area_tag 'settings[email_recipients]', @settings['email_recipients'] %>
+  <em class="info">Multiple recipients allowed (comma separated).</em>
+</p>
+
